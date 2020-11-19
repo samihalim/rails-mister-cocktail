@@ -1,0 +1,27 @@
+<div class="container">
+
+  <h1>Mr.Cocktail</h1>
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.telegraph.co.uk/content/dam/Travel/hotels/africa/morocco/marrakech/la-mamounia-marrakech-italian-bar.jpg?imwidth=1400);">
+  <div class="container">
+    <h1>Mr<strong>Cocktails</strong>
+  </div>
+</div>
+
+
+  <button class="btn btn-success"> <%= link_to 'Create a new Cocktail ;)', new_cocktail_path %></button>
+  <div class="container mt-4">
+    <div class="cards">
+      <% @cocktails.each do |cocktail| %>
+      <div class="card-category"">
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fas fa-trash-alt" id="cards"></i>
+        <% end %>
+
+      </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+
