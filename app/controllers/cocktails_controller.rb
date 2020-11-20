@@ -22,7 +22,7 @@ before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
   def create
     @cocktail = Cocktail.new(cocktail_params)
 
-    if @cocktail.save
+    if @cocktail.save!
       redirect_to @cocktail, notice: 'cocktail was successfully created.'
     else
       render :new
